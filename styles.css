@@ -196,15 +196,15 @@
   }
 }
 :root{
-  --accent:#26ddeb;
-  --accent-2:#228df1;
-  --muted:#6f44c5;
+  --accent:#23cad6;
+  --accent-2:#1975ffce;
+  --muted:#ffffff;
   --bg:#f6f8f4;
   --card:#ffffff;
   --heading:#b65ec2;
   --glass: rgba(255,255,255,0.6);
-  --extra-1:#8ebedc;
-  --extra-2:#faea0b;
+  --extra-1:#ff5ccef3;
+  --extra-2:#030301;
   --extra-3:#e8a1c2;
 }
 *{box-sizing:border-box}
@@ -304,7 +304,7 @@ body{font-family:Segoe UI,Arial,Helvetica,sans-serif;margin:0;background:linear-
 .features-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
 .features-left{display:flex;align-items:center}
 .feature-cards{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:18px}
-.feature-card{position:relative;border-radius:28px;width:220px;height:180px;padding:20px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 20px 40px rgba(0,0,0,0.08)}
+.feature-card{position:relative;border-radius:28px;width:100px;max-width:220px;min-height:180px;padding:20px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 20px 40px rgba(0,0,0,0.08)}
 .feature-card .feature-icon{position:absolute;right:16px;top:16px;font-size:20px;opacity:0.18}
 .feature-card .feature-title{font-weight:900;font-size:28px;letter-spacing:0.5px}
 .feature-card .feature-sub{font-size:0.85rem;opacity:0.95;margin-top:6px;font-weight:700}
@@ -334,4 +334,45 @@ a:hover{color:var(--accent)}
   .work-grid{grid-template-columns:1fr}
   .servicios{margin:0 auto;align-items:center;padding:0 12px}
   .report-grid{grid-template-columns:repeat(2,1fr);justify-content:center;gap:18px}
+}
+
+/* =========================
+   RESPONSIVE MOVIL MEJORADO
+========================= */
+
+@media (max-width: 768px){
+
+  /* Tarjetas de características en columna */
+  .feature-cards{
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+    justify-items:center;
+  }
+
+  .features-left{
+    justify-content:center;
+  }
+
+  /* Ajustar textos grandes */
+  .info-title{
+    font-size:2.5rem;
+  }
+
+  .title-part-2{
+    font-size:1.8rem;
+  }
+
+  .feature-heading{
+    font-size:1.5rem;
+  }
+
+  .feature-paragraph{
+    font-size:0.95rem;
+  }
+
+  /* Ajustar tarjetas de servicios */
+  .report-grid{
+    grid-template-columns:1fr;
+  }
+
 }
