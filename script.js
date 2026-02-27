@@ -47,16 +47,16 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Estadísticas de ejemplo (puedes reemplazar con datos reales)
   const stats = {
-    baches: 20180,
-    fugas: 12111,
-    luces: 11715,
-    basura: 3331
+    baches: 6216,
+    luces: 3950,
+    fugas: 3784,
+    podas: 1113
   };
 
   document.getElementById('stat-baches').textContent = stats.baches;
-  document.getElementById('stat-fugas').textContent = stats.fugas;
   document.getElementById('stat-luces').textContent = stats.luces;
-  document.getElementById('stat-basura').textContent = stats.basura;
+  document.getElementById('stat-fugas').textContent = stats.fugas;
+  document.getElementById('stat-podas').textContent = stats.podas;
 
   // Notas (pueden cargarse desde una API)
   const notas = [
