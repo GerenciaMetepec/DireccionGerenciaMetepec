@@ -19,8 +19,10 @@
 /* Galería de nuestro trabajo */
 .galeria {
   margin: 60px auto;
-  padding: 40px 20px;
-  max-width: 1400px; /* más ancho */
+  padding: 40px 40px;
+  max-width: 1600px;   /* más ancho real */
+}
+
 }
 .galeria h3 {
   font-size: 1.4rem;
@@ -31,8 +33,9 @@
 }
 .galeria-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  justify-content: center;
 }
 
 .galeria-grid a {
@@ -48,10 +51,10 @@
 }
 .galeria-grid img {
   width: 100%;
-  height: 380px; /* más grandes */
+  height: 600px; /* aún más grandes */
   object-fit: cover;
   display: block;
-  border-radius: 18px;
+  border-radius: 20px;
 }
 
 
@@ -217,7 +220,7 @@
 *{box-sizing:border-box}
 body{font-family:Segoe UI,Arial,Helvetica,sans-serif;margin:0;background:linear-gradient(180deg,var(--bg),#10fff356 120px);color:#222}
 .container{max-width:1100px;margin:0 auto;padding:18px}
-.site-header{position: sticky;top: 0;z-index: 999;background: linear-gradient(90deg,var(--accent),var(--accent-2));color: #fff;box-shadow:0 6px 20px rgba(0,0,0,0.12);  backdrop-filter: blur(12px);}
+.site-header{background: linear-gradient(90deg,var(--accent),var(--accent-2));color: #fff;box-shadow:0 6px 20px rgba(0,0,0,0.12);  backdrop-filter: blur(12px);}
 .site-header .container.header-flex{display: flex;align-items: center; justify-content: flex-end;gap: 2rem;}
 .header-actions{display: flex;gap: 1rem;justify-content: center;padding: 0.5rem 0;background: var(--extra-1);}
 .site-header h1{font-size: 1.2rem;margin: 12px 0;font-weight: 700;}
