@@ -1,3 +1,10 @@
+body {
+  background-image: url('fondo/Árbol_de_la_Vida_-_Metepec,_Estado_de_México.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
 /* Logo administración Metepec en header */
 .logo-admin {
   max-width: 130px;

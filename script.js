@@ -60,9 +60,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // Notas (pueden cargarse desde una API)
   const notas = [
-    'Desde 2022, nuestro objetivo es resolver problemas de infraestructura de manera eficiente y rápida.',
-    'Tener calles más iluminadas y seguras.',
-    'Calles limpias sin basura acumulada.'
+    'Gestiona 36 servicios públicos para fortalecer la atención y mejorar la calidad de vida de la ciudadanía.',
+    'Escucha y atiende con responsabilidad, fortaleciendo la participación ciudadana para la construcción de un mejor municipio.',
+    'Trabaja con compromiso, transaparencia y cercania con cada ciudadano que genera un reporte.'
   ];
   const notasList = document.getElementById('notas-list');
   notasList.innerHTML = notas.map(n => `<li>${n}</li>`).join('');
