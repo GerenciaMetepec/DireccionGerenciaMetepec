@@ -8,17 +8,21 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-flex">
-      <img class="logo-admin" src="logos/logo-administracion-blanco.png" alt="Logo Administración Metepec">
+      <img class="logo-admin" src="logos/logo-administracion-SinFondo.png" alt="Logo Administración Metepec">
       <div style="flex:1"></div>
       <img class="logo-gerencia" src="logos/Gerencia-Metepec.png" alt="Gerencia de la Ciudad Metepec">
     </div>
     <div class="header-actions">
       <button class="nav-btn active" data-section="inicio">Inicio</button>
       <button class="nav-btn" data-section="nuestro-trabajo">Nuestro trabajo</button>
+      <a class="nav-btn" style="color: antiquewhite;" href="https://forms.gle/PEVmdTCG8qjuSZxF7" target="_blank">Encuesta de satisfacción</a>
     </div>
   </header>
 
@@ -198,7 +202,7 @@
       </div>
       <div class="work-grid">
         <div class="stats">
-          <h3>En el año 2025, hemos gestionado la atención de:</h3>
+          <h3>Durante el año 2025, se gestionó la atención de:</h3>
           <div class="stats-grid">
             <div class="stat-card">
               <span class="stat-number" id="stat-baches">0</span>
@@ -232,40 +236,89 @@
           <h3>Mapa interactivo</h3>
           <iframe src="https://gerenciametepec.github.io/MapaMetepec/" style="width:100%; height:520px; border:none; border-radius:18px; box-shadow:0 8px 32px rgba(0,0,0,0.07);" title="Mapa Interactivo"></iframe>
         </div>
+
         <!-- Galería de imágenes -->
-        <div class="galeria">
-          <h3>Galería de nuestro trabajo</h3>
-          <div class="galeria-grid">
-            <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.07%20AM%20(1).jpeg" target="_blank" rel="noopener">
-              <img src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.07%20AM%20(1).jpeg" alt="Trabajo Metepec 1" loading="lazy" style="width:100%;height:auto;object-fit:contain;">
-            </a>
-            <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(1).jpeg" target="_blank" rel="noopener">
-              <img src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(1).jpeg" alt="Trabajo Metepec 2" loading="lazy" style="width:100%;height:auto;object-fit:contain;">
-            </a>
-            <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(2).jpeg" target="_blank" rel="noopener">
-              <img src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(2).jpeg" alt="Trabajo Metepec 3" loading="lazy" style="width:100%;height:auto;object-fit:contain;">
-            </a>
-            <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(3).jpeg" target="_blank" rel="noopener">
-              <img src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(3).jpeg" alt="Trabajo Metepec 4" loading="lazy" style="width:100%;height:auto;object-fit:contain;">
-            </a>
-            <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(5).jpeg" target="_blank" rel="noopener">
-              <img src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(5).jpeg" alt="Trabajo Metepec 5" loading="lazy" style="width:100%;height:auto;object-fit:contain;">
-            </a>
-            <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(6).jpeg" target="_blank" rel="noopener">
-              <img src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(6).jpeg" alt="Trabajo Metepec 6" loading="lazy" style="width:100%;height:auto;object-fit:contain;">
-            </a>
-            <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM.jpeg" target="_blank" rel="noopener">
-              <img src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM.jpeg" alt="Trabajo Metepec 7" loading="lazy" style="width:100%;height:auto;object-fit:contain;">
-            </a>
-            <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.09%20AM%20(1).jpeg" target="_blank" rel="noopener">
-              <img src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.09%20AM%20(1).jpeg" alt="Trabajo Metepec 8" loading="lazy" style="width:100%;height:auto;object-fit:contain;">
-            </a>
+          
+          <div id="theCarousel" class="carousel slide" data-ride="carousel">
+            <br>
+            <h3>Galería de nuestro trabajo</h3>
+            <br>
+            <!-- Indicadores -->
+            <ol class="carousel-indicators">
+              <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#theCarousel" data-slide-to="1"></li>
+              <li data-target="#theCarousel" data-slide-to="2"></li>
+              <li data-target="#theCarousel" data-slide-to="3"></li>
+              <li data-target="#theCarousel" data-slide-to="4"></li>
+              <li data-target="#theCarousel" data-slide-to="5"></li>
+              <li data-target="#theCarousel" data-slide-to="6"></li>
+              <li data-target="#theCarousel" data-slide-to="7"></li>
+              <li data-target="#theCarousel" data-slide-to="8"></li>
+
+            </ol>
+
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.07%20AM%20(1).jpeg" target="_blank" rel="noopener">
+                <img class="d-block w-400" src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.07%20AM%20(1).jpeg" loading="lazy" alt="Trabajo Metepec 1" style="width:45%;height:auto;">
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(1).jpeg" target="_blank" rel="noopener">
+                <img class="d-block w-400" src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(1).jpeg" loading="lazy"  alt="Trabajo Metepec 2" style="width:45%;height:auto;">
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(2).jpeg" target="_blank" rel="noopener">
+                <img  class="d-block w-400" src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(2).jpeg" loading="lazy"  alt="Trabajo Metepec 3" style="width:45%;height:auto;">
+                </a>
+              </div>
+              <div class="item">
+                <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(3).jpeg" target="_blank" rel="noopener">
+                <img class="d-block w-400" src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(3).jpeg" loading="lazy" alt="Trabajo Metepec 4" style="width:45%;height:auto;"">
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(5).jpeg" target="_blank" rel="noopener">
+                <img class="d-block w-400"src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(5).jpeg" loading="lazy" alt="Trabajo Metepec 5" style="width:45%;height:auto;">
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(6).jpeg" target="_blank" rel="noopener">
+                <img class="d-block w-400" src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM%20(6).jpeg" loading="lazy" alt="Trabajo Metepec 6" style="width:45%;height:auto;">
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM.jpeg" target="_blank" rel="noopener">
+                <img class="d-block w-400" src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.08%20AM.jpeg" loading="lazy"alt="Trabajo Metepec 7" style="width:45%;height:auto;">
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="img/WhatsApp%20Image%202026-02-11%20at%2010.10.09%20AM%20(1).jpeg" target="_blank" rel="noopener">
+                <img class="d-block w-400" src="img/WhatsApp%20Image%202026-02-11%20at%2010.10.09%20AM%20(1).jpeg" loading="lazy" alt="Trabajo Metepec 8" style="width:45%;height:auto;">
+                </a>
+              </div>
+
+              <a class="left carousel-control" href="#theCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">anterior</span>
+              </a>
+              <a class="right carousel-control" href="#theCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">siguiente</span>
+              </a>
+            </div>
           </div>
-        </div>
-      </div>
+        
     </section>
-  
-  </main>
+    
+</main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -274,10 +327,12 @@
         <a class="social-btn facebook" href="https://www.facebook.com/profile.php?id=100078255782830" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
         <a class="social-btn instagram" href="https://www.instagram.com/fernandofloresempresario/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
       </div>
+      <p class="social-btn contador">Visitas: <span id="contador">0</span></p>
     </div>
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="script.js"></script>
+    
 </body>
 </html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Encuesta de Satisfacción</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .rating-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .rating-option {
+            display: flex;
+            align-items: center;
+        }
+        .rating-option label {
+            margin-bottom: 0;
+            font-weight: normal;
+        }
+        .checkbox-group {
+            margin-top: 10px;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Encuesta de Satisfacción</h1>
+        <p class="subtitle">Tu opinión es importante para nosotros</p>
+        
+        <form id="surveyForm">
+                        
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre">Edad:</label>
+                <input type="text" id="edad" name="edad" required>
+            </div>
+
+            <div class="form-group">
+                <label>Genero</label>
+                <div class="rating-group">
+                    <div class="rating-option">
+                        <input type="radio" id="Femenino" name="servicio" value="Femenino">
+                        <label for="bueno">Femenino</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" id="Masculino" name="servicio" value="Masculino" required>
+                        <label for="excelente">Masculino</label>
+                    </div>
+                    
+                    <div class="rating-option">
+                        <input type="radio" id="Nobinario" name="servicio" value="Nobinario">
+                        <label for="regular">No binario</label>
+                    </div>
+                    <div class="rating-option">
+                        <input type="radio" id="Otro" name="servicio" value="Otro">
+                        <label for="regular">Otro</label>
+                    </div>
+                    <div class="rating-option">
+                        <input type="radio" id="Prefieronodecirlo" name="servicio" value="Prefieronodecirlo">
+                        <label for="regular">Prefiero no decirlo</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>¿Vives en Metepec?</label>
+                <div class="rating-group">
+                    <div class="rating-option">
+                        <input type="radio" id="Si" name="servicio" value="Si">
+                        <label for="bueno">Si</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" id="No" name="servicio" value="No" required>
+                        <label for="excelente">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>¿Conoces *7311?</label>
+                <div class="rating-group">
+                    <div class="rating-option">
+                        <input type="radio" id="Si" name="servicio" value="Si">
+                        <label for="bueno">Si</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" id="No" name="servicio" value="No" required>
+                        <label for="excelente">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>¿Ha sido una buena experiencia levantar tu reporte al *7311?</label>
+                <div class="rating-group">
+                    <div class="rating-option">
+                        <input type="radio" id="Si" name="servicio" value="Si">
+                        <label for="bueno">Si</label>
+                    </div>
+
+                    <div class="rating-option">
+                        <input type="radio" id="No" name="servicio" value="No" required>
+                        <label for="excelente">No</label>
+                    </div>                  
+                </div>
+                <div class="form-group">
+                        <textarea id="comentariosr" name="comentarios" placeholder="Comparta sus comentarios aquí sobre su experiencia..."></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="comentarios">Comentarios Adicionales:</label>
+                <textarea id="comentarios" name="comentarios" placeholder="Comparta sus comentarios aquí..."></textarea>
+            </div>
+            
+            <button type="submit">Enviar Encuesta</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por completar la encuesta! Sus respuestas han sido registradas.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
