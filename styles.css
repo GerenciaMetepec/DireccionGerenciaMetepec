@@ -69,12 +69,12 @@ body {
   text-align: center;
 }
 
-.video-box video {
+.video-box iframe {
   width: 100%;
-  max-width: 400px; /* controla tamaño */
-  height: auto;
+  max-width: 500px;
+  height: 280px;
   border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  border: none;
 }
 
 
