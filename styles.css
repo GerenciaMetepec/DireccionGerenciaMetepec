@@ -64,6 +64,19 @@ body {
   border-radius: 20px;
 }
 
+.video-box {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.video-box video {
+  width: 100%;
+  max-width: 400px; /* controla tamaño */
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
 
 .galeria-grid {
   grid-template-columns: repeat(4, 1fr);
