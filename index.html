@@ -20,6 +20,21 @@
 
     gtag('config', 'G-E2DKPCPL8R');
 
+    //Abre archivos
+      function AbreDatos(PArchivo) {
+            //alert("Abriendo archivo: " + PArchivo);
+            
+            // Creamos un elemento de enlace (a) dinámicamente
+            const link = document.createElement('a');
+            
+            link.href = 'Archivos/' + PArchivo; // Ruta del archivo a descargar
+           
+            // Simulamos un clic en el enlace para iniciar la descarga
+            link.click();
+            
+            // Limpiamos el elemento para evitar problemas
+            link.remove();
+        };  
   </script>
 </head>
 <body>
@@ -83,49 +98,49 @@
       <div class="servicios">
         <h4>¿Qué puedes reportar?</h4>
         <div class="report-grid">
-          <button class="service-card active" data-service="alumbrado" >
+          <button class="service-card active" data-service="alumbrado" onclick="AbreDatos('Alumbrado.xlsx')">
             <i class="fa-solid fa-lightbulb"></i>
             <span class="label">Alumbrado</span>
             <span class="indicator"></span>
           </button>
 
-          <button class="service-card" data-service="bacheo" >
+          <button class="service-card" data-service="bacheo" onclick="AbreDatos('Bacheo.xlsx')">
             <i class="fa-solid fa-road"></i>
             <span class="label">Bacheo</span>
             <span class="indicator"></span>
           </button>
 
-          <button class="service-card" data-service="parques">
+          <button class="service-card" data-service="parques" onclick="AbreDatos('Parques.xlsx')">
             <i class="fa-solid fa-tree"></i>
             <span class="label">Parques</span>
             <span class="indicator"></span>
           </button>
 
-          <button class="service-card" data-service="recoleccion">
+          <button class="service-card" data-service="recoleccion" onclick="AbreDatos('Recoleccion.xlsx')">
             <i class="fa-solid fa-trash"></i>
             <span class="label">Recolección</span>
             <span class="indicator"></span>
           </button>
 
-          <button class="service-card" data-service="fugas">
+          <button class="service-card" data-service="fugas" onclick="AbreDatos('Fugas.xlsx')">
             <i class="fa-solid fa-droplet"></i>
             <span class="label">Fugas de agua</span>
             <span class="indicator"></span>
           </button>
 
-          <button class="service-card" data-service="seguridad">
+          <button class="service-card" data-service="seguridad" onclick="AbreDatos('Seguridad.xlsx')">
             <i class="fa-solid fa-bell"></i>
             <span class="label">Seguridad</span>
             <span class="indicator"></span>
           </button>
 
-          <button class="service-card" data-service="semaforos">
+          <button class="service-card" data-service="semaforos" onclick="AbreDatos('Semaforos.xlsx')">
             <i class="fa-solid fa-traffic-light"></i>
             <span class="label">Semáforos</span>
             <span class="indicator"></span>
           </button>
 
-          <button class="service-card" data-service="limpieza">
+          <button class="service-card" data-service="limpieza" onclick="AbreDatos('Limpieza.xlsx')">
             <i class="fa-solid fa-broom"></i>
             <span class="label">Limpieza</span>
             <span class="indicator"></span>
