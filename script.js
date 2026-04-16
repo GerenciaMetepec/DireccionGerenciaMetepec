@@ -75,35 +75,4 @@ document.addEventListener('DOMContentLoaded', function(){
   localStorage.setItem('visitas', visitas);
   document.getElementById('contador').innerText = visitas;
 
-
-
-  document.getElementById('encuesta').addEventListener('submit', function(e) {
-      e.preventDefault(); // Previene la recarga de la página
-
-      // Captura los datos del formulario
-      alert('si entre');
-      const form = e.target;
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-
-      // Envía los datos al servidor
-      fetch('https://tu-api.com', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-      })
-      .then(response => response.json())
-      .then(result => {
-          document.getElementById('mensaje').innerText = '¡Encuesta enviada con éxito!';
-          console.log('Respuesta:', result);
-          form.reset(); // Limpia el formulario
-      })
-      .catch(error => {
-          console.error('Error:', error);
-          document.getElementById('mensaje').innerText = 'Error al enviar la encuesta.';
-      });
-  });
-
 });
