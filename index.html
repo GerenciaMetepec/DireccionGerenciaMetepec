@@ -21,7 +21,11 @@
     gtag('config', 'G-E2DKPCPL8R');
 
     function AbreDatos(PArchivo){
-      alert(PArchivo);
+        alert(1);
+     // Creamos un elemento de enlace (a) dinámicamente
+        const link = document.createElement('a');
+        link.href = 'Archivos/' + PArchivo; // Ruta del archivo a descargar
+      alert("Abriendo archivo: " + PArchivo);
     };
     
   </script>
@@ -87,7 +91,7 @@
       <div class="servicios">
         <h4>¿Qué puedes reportar?</h4>
         <div class="report-grid">
-          <button class="service-card active" data-service="alumbrado">
+          <button class="service-card active" data-service="alumbrado" onclick="AbreDatos('Alumbrado.xlsx')">
             <i class="fa-solid fa-lightbulb"></i>
             <span class="label">Alumbrado</span>
             <span class="indicator"></span>
